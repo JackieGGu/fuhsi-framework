@@ -8,6 +8,25 @@
   <version>${revision}</version>
   <packaging>pom</packaging>
 
+  <scm>
+    <url>https://github.com/JackieGGu/fuhsi-framework</url>
+  </scm>
+
+  <developers>
+    <developer>
+      <name>JackieGu</name>
+      <email>jackieggu@gmail.com</email>
+    </developer>
+  </developers>
+
+  <modules>
+    <module>eureka</module>
+  </modules>
+
+  <distributionManagement>
+
+  </distributionManagement>
+
   <properties>
     <revision>1.0.0-SNAPSHOT</revision>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -40,6 +59,18 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
+
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-logging</artifactId>
+        <version>${spring-boot.version}</version>
+        <exclusions>
+          <exclusion>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-to-slf4j</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -60,6 +91,12 @@
       <groupId>javax.servlet</groupId>
       <artifactId>javax.servlet-api</artifactId>
       <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
@@ -110,4 +147,5 @@
       </plugin>
     </plugins>
   </build>
+
 </project>
