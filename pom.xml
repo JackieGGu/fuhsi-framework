@@ -20,7 +20,9 @@
   </developers>
 
   <modules>
+    <module>common</module>
     <module>eureka</module>
+    <module>logback</module>
   </modules>
 
   <distributionManagement>
@@ -61,15 +63,21 @@
       </dependency>
 
       <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-logging</artifactId>
-        <version>${spring-boot.version}</version>
-        <exclusions>
-          <exclusion>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-to-slf4j</artifactId>
-          </exclusion>
-        </exclusions>
+        <groupId>cn.jackiegu</groupId>
+        <artifactId>fuhsi-common</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>cn.jackiegu</groupId>
+        <artifactId>fuhsi-eureka</artifactId>
+        <version>${revision}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>cn.jackiegu</groupId>
+        <artifactId>fuhsi-logback</artifactId>
+        <version>${revision}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>

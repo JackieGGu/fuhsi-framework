@@ -8,7 +8,8 @@
     <artifactId>fuhsi-framework</artifactId>
     <version>${revision}</version>
   </parent>
-  <artifactId>fuhsi-eureka</artifactId>
+
+  <artifactId>fuhsi-logback</artifactId>
   <version>${revision}</version>
   <packaging>jar</packaging>
 
@@ -21,32 +22,14 @@
 
   <dependencies>
     <dependency>
-      <groupId>cn.jackiegu</groupId>
-      <artifactId>fuhsi-common</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>cn.jackiegu</groupId>
-      <artifactId>fuhsi-logback</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>org.springframework.cloud</groupId>
-      <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-logging</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.apache.logging.log4j</groupId>
+          <artifactId>log4j-to-slf4j</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
   </dependencies>
-
-  <build>
-    <finalName>${project.artifactId}</finalName>
-    <plugins>
-      <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-        <configuration>
-          <mainClass>cn.jackiegu.fuhsi.eureka.EurekaApplication</mainClass>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-
 </project>
