@@ -5,6 +5,13 @@ spring:
   application:
     name: eureka
 
+logging:
+  group:
+    fuhsi-eureka:
+      - cn.jackiegu.fuhsi.eureka
+  level:
+    fuhsi-eureka: INFO
+
 eureka:
   instance:
     # 注册应用名
