@@ -20,7 +20,7 @@
       <charset>UTF-8</charset>
     </encoder>
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-      <fileNamePattern>./logs/%d{yyyyMMdd}/${spring.application.name}-%i.log</fileNamePattern>
+      <fileNamePattern>./logs/%d{yyyyMMdd}/${appName}-%i.log</fileNamePattern>
       <maxHistory>${logbackMaxHistory}</maxHistory>
       <totalSizeCap>${logbackTotalSizeCap}</totalSizeCap>
       <maxFileSize>${logbackMaxFileSize}</maxFileSize>
