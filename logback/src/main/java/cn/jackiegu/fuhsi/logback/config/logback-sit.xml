@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 测试环境 -->
 <included>
-  <springProperty name="logbackMaxHistory" source="logback.max.history" scope="CONTEXT" defaultValue="30"/>
-  <springProperty name="logbackTotalSizeCap" source="logback.total.sizeCap" scope="CONTEXT" defaultValue="1GB"/>
-  <springProperty name="logbackMaxFileSize" source="logback.max.fileSize" scope="CONTEXT" defaultValue="64MB"/>
-
   <!-- 控制台日志 -->
   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
     <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
@@ -20,7 +16,7 @@
       <charset>UTF-8</charset>
     </encoder>
     <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-      <fileNamePattern>./logs/%d{yyyyMMdd}/${appName}-%i.log</fileNamePattern>
+      <fileNamePattern>${rollingFilePath}</fileNamePattern>
       <maxHistory>${logbackMaxHistory}</maxHistory>
       <totalSizeCap>${logbackTotalSizeCap}</totalSizeCap>
       <maxFileSize>${logbackMaxFileSize}</maxFileSize>

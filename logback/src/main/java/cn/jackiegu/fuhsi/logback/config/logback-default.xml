@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-  <springProperty name="appName" source="spring.application.name" scope="CONTEXT" defaultValue="defaultApp"/>
+  <include resource="cn/jackiegu/fuhsi/logback/config/logback-property.xml"/>
 
   <!-- 本地环境 -->
   <springProfile name="!sit &amp; !pro">
