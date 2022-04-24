@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: eureka
+    name: fuhsi-eureka
 
 logging:
   group:
