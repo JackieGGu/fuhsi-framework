@@ -4,6 +4,10 @@ server:
 spring:
   application:
     name: fuhsi-eureka
+  security:
+    user:
+      name: admin
+      password: 123456
 
 logging:
   group:
@@ -32,4 +36,4 @@ eureka:
     fetch-registry: false
     service-url:
       # 注册中心的地址
-      defaultZone: http://eureka-node:8761/eureka/
+      defaultZone: http://admin:123456@eureka-node:8761/eureka/
