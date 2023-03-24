@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 本地环境 -->
+<included>
+  <!-- 控制台日志 -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>%boldGreen(%d{yyyy-MM-dd HH:mm:ss SSS}) %highlight([%level]) %magenta([%thread]) %cyan(%logger{100}:%line) - %msg%n</pattern>
+      <charset>UTF-8</charset>
+    </encoder>
+  </appender>
+
+  <!-- 启用INFO级别日志 -->
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+</included>

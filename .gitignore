@@ -31,6 +31,9 @@ build/
 ### VS Code ###
 .vscode/
 
+### MacOS ###
+.DS_Store
+
 ### Maven Plugins ###
 .flattened-pom.xml
 

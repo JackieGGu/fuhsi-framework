@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 属性配置 -->
+<included>
+  <!-- 应用名称 -->
+  <springProperty name="appName" source="spring.application.name" scope="CONTEXT" defaultValue="defaultApp"/>
+  <!-- 主机IP -->
+  <springProperty name="hostIP" source="spring.cloud.client.ip-address" scope="CONTEXT" defaultValue="0.0.0.0"/>
+
+  <!-- 日志文件配置 -->
+  <property name="rollingFilePath" value="./logs/${appName}/%d{yyyy-MM-dd}/${hostIP}-%i.log"/>
+  <springProperty name="logbackMaxHistory" source="logback.max.history" scope="CONTEXT" defaultValue="30"/>
+  <springProperty name="logbackTotalSizeCap" source="logback.total.sizeCap" scope="CONTEXT" defaultValue="1GB"/>
+  <springProperty name="logbackMaxFileSize" source="logback.max.fileSize" scope="CONTEXT" defaultValue="64MB"/>
+</included>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+  <include resource="cn/jackiegu/fuhsi/logback/config/logback-property.xml"/>
+
+  <!-- 本地环境 -->
+  <springProfile name="!sit &amp; !pro">
+    <include resource="cn/jackiegu/fuhsi/logback/config/logback-local.xml"/>
+  </springProfile>
+
+  <!-- 测试环境 -->
+  <springProfile name="sit">
+    <include resource="cn/jackiegu/fuhsi/logback/config/logback-sit.xml"/>
+  </springProfile>
+
+  <!-- 生产环境 -->
+  <springProfile name="pro">
+    <include resource="cn/jackiegu/fuhsi/logback/config/logback-pro.xml"/>
+  </springProfile>
+</configuration>

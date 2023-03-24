@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 测试环境 -->
+<included>
+  <!-- 控制台日志 -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>%boldGreen(%d{yyyy-MM-dd HH:mm:ss SSS}) %highlight([%level]) %magenta([%thread]) %cyan(%logger{100}:%line) - %msg%n</pattern>
+      <charset>UTF-8</charset>
+    </encoder>
+  </appender>
+
+  <!-- 文件日志 -->
+  <appender name="ROLLING_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+      <pattern>%d{yyyy-MM-dd HH:mm:ss SSS} [%level] [%thread] %logger{100}:%line - %msg%n</pattern>
+      <charset>UTF-8</charset>
+    </encoder>
+    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>${rollingFilePath}</fileNamePattern>
+      <maxHistory>${logbackMaxHistory}</maxHistory>
+      <totalSizeCap>${logbackTotalSizeCap}</totalSizeCap>
+      <maxFileSize>${logbackMaxFileSize}</maxFileSize>
+    </rollingPolicy>
+  </appender>
+
+  <!-- 启用INFO级别日志 -->
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+    <appender-ref ref="ROLLING_FILE"/>
+  </root>
+</included>

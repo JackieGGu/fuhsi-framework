@@ -1,0 +1,39 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: fuhsi-eureka
+  security:
+    user:
+      name: admin
+      password: 123456
+
+logging:
+  group:
+    fuhsi-eureka:
+      - cn.jackiegu.fuhsi.eureka
+  level:
+    fuhsi-eureka: INFO
+
+eureka:
+  instance:
+    # 注册应用名
+    appname: ${spring.application.name}
+    # 注册主机名
+    hostname: eureka-node
+    # 注册实例ID
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  server:
+    # 开启自我保护机制
+    enable-self-preservation: false
+    # 每分钟最少续约数更新周期
+    renewal-threshold-update-interval-ms: 60000
+  client:
+    # 是否将自己注册到注册中心
+    register-with-eureka: false
+    # 是否需要从注册中心获取注册信息
+    fetch-registry: false
+    service-url:
+      # 注册中心的地址
+      defaultZone: http://admin:123456@eureka-node:8761/eureka/
