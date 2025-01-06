@@ -8,15 +8,17 @@ import java.io.FileNotFoundException;
 import java.net.URL;
 
 /**
- * @author JackieGu
- * @date 2022/4/2
+ * 资源工具单元测试
+ *
+ * @author gujie
+ * @since 2022/4/2
  */
 public class ResourceUtilsTest {
 
     @Test
     public void getURLTest() {
         try {
-            URL url = ResourceUtils.getURL("classpath:cn/jackiegu/fuhsi/logback/config/logback-default.xml");
+            URL url = ResourceUtils.getURL(ResourceUtils.CLASSPATH_URL_PREFIX + "cn/jackiegu/fuhsi/logback/config/logback-default.xml");
             Assert.assertFalse(url.getPath().isEmpty());
         } catch (FileNotFoundException e) {
             e.printStackTrace();
