@@ -17,8 +17,8 @@ import java.util.Map;
  * Logback日志组件配置处理器
  * 添加logbackConfigProperties属性资源到environment实例, 该属性资源配置了logging.config文件路径
  *
- * @author JackieGu
- * @date 2022/4/1
+ * @author gujie
+ * @since 2022/4/1
  */
 public class LogbackConfigEnvironmentPostProcessor implements EnvironmentPostProcessor, Ordered {
 
