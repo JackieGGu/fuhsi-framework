@@ -21,7 +21,7 @@ public class MacOSTest {
     }
 
     private void deleteExecute(File file) {
-        if (file.isFile() && file.getName().equals(".DS_Store")) {
+        if (file.isFile() && (file.getName().equals(".DS_Store") || file.getName().startsWith("._"))) {
             file.delete();
             System.out.println("Deleted: " + file.getPath());
             return;
@@ -30,7 +30,7 @@ public class MacOSTest {
             if (f.isDirectory()) {
                 this.deleteExecute(f);
             } else {
-                if (f.getName().equals(".DS_Store")) {
+                if (f.getName().equals(".DS_Store") || f.getName().startsWith("._")) {
                     f.delete();
                     System.out.println("Deleted: " + f.getPath());
                 }
