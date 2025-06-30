@@ -11,7 +11,7 @@ import java.net.URL;
  * 资源工具单元测试
  *
  * @author gujie
- * @since 2022/4/2
+ * @date 2022/4/2
  */
 public class ResourceUtilsTest {
 

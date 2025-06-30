@@ -8,7 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * Spring Security Config
  *
  * @author gujie
- * @since 2022/5/4
+ * @date 2022/5/4
  */
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
