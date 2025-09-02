@@ -21,7 +21,7 @@ public class MavenTest {
     }
 
     private void deleteExecute(File file) {
-        if (file.isFile() && file.getName().endsWith(".lastUpdate")) {
+        if (file.isFile() && file.getName().contains(".lastUpdated")) {
             file.delete();
             System.out.println("Deleted: " + file.getPath());
             return;
@@ -30,7 +30,7 @@ public class MavenTest {
             if (f.isDirectory()) {
                 this.deleteExecute(f);
             } else {
-                if (f.getName().endsWith(".lastUpdate")) {
+                if (f.getName().contains(".lastUpdated")) {
                     f.delete();
                     System.out.println("Deleted: " + f.getPath());
                 }
